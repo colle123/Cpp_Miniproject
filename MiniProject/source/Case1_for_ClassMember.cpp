@@ -7,9 +7,6 @@
 
 using namespace std;
 
-
-
-
 class Software
 {
 private:
@@ -30,7 +27,7 @@ public:
 		strcpy(Software_Searial, aSoftware_Searial);
 	}
 
-	void print_software_Info()
+	void print_software_Info() const
 	{
 		cout << " < SoftWare Info > " << endl;
 		cout << this->Software_Name << endl;
@@ -59,7 +56,7 @@ public:
 		strcpy(Power_Searial, aPower_Searial);
 	}
 
-	void print_Power_Info()
+	void print_Power_Info() const
 	{
 		cout << " < Power Info > " << endl;
 		cout << this->Power_Name << endl;
@@ -88,7 +85,7 @@ public:
 		strcpy(Case_Searial, aCase_Searial);
 	}
 
-	void print_Case_Info()
+	void print_Case_Info() const
 	{
 		cout << " < Case Info > " << endl;
 		cout << this->Case_Name << endl;
@@ -117,7 +114,7 @@ public:
 		strcpy(SSD_Searial, aSSD_Searial);
 	}
 
-	void print_SSD_Info()
+	void print_SSD_Info() const
 	{
 		cout << " < SSD Info > " << endl;
 		cout << this->SSD_Name << endl;
@@ -146,7 +143,7 @@ public:
 		strcpy(HDD_Searial, aHDD_Searial);
 	}
 
-	void print_HDD_Info()
+	void print_HDD_Info() const
 	{
 		cout << " < HDD Info > " << endl;
 		cout << this->HDD_Name << endl;
@@ -175,7 +172,7 @@ public:
 		strcpy(Memorry_Searial, aMemorry_Searial);
 	}
 
-	void print_Memorry_Info()
+	void print_Memorry_Info() const
 	{
 		cout << " < Memorry Info > " << endl;
 		cout << this->Memorry_Name << endl;
@@ -203,7 +200,7 @@ public:
 		MB_Searial = new char[strlen(aMB_Searial) + 1];
 		strcpy(MB_Searial, aMB_Searial);
 	}
-	void print_MB_Info()
+	void print_MB_Info() const
 	{
 		cout << " < MB Info > " << endl;
 		cout << this->MB_Name << endl;
@@ -232,12 +229,12 @@ public:
 		CPU_Searial = new char[strlen(aCPU_Searial) + 1];
 		strcpy(CPU_Searial, aCPU_Searial);
 	}
-	void print_cpu_Info()
+	void print_cpu_Info() const
 	{
-		cout << " cpu Info " << endl;
+		cout << " < CPU Info > " << endl;
 		cout << this->CPU_Name << endl;
 		cout << this->CPU_Num << endl;
-		cout << this->CPU_Searial << endl;
+		cout << this->CPU_Searial << endl << endl;
 	}
 };
 
@@ -255,9 +252,10 @@ private:
 	Software* software_os;
 
 public:
-	product2(const char* aProduct_Searial, CPU acpu, MB amb, Memorry aram, HDD ahdd, SSD assd, Power apow, Case apc_case, Software asoftware_os)
+	product2(const char* aProduct_Searial, CPU& acpu, MB& amb, Memorry& aram, HDD& ahdd, SSD& assd, Power& apow, Case& apc_case, Software& asoftware_os)
 		//:cpu(acpu) mb(amb), ram(aram), hdd(ahdd), ssd(assd), pc_case(apc_case), pow(apow), software_os(asoftware_os)
 	{
+		// 멤버변수가 포인터 이므로 얘들이 가리킬 녀석을 임시로 만들어줘야함
 		cpu = new CPU(acpu);
 		mb = new MB(amb);
 		ram = new Memorry(aram);
@@ -271,8 +269,10 @@ public:
 		strcpy(Product_Searial, aProduct_Searial);
 	}
 
-	void Print_produt()
+	void Print_produt() const
 	{
+		// 각 클래스의 멤버는 private이므로 해당 클래스에서 함수로 접근해야 멤버의 값을 참조가능
+		// 즉, print_cpu_Info();를 그냥 쓰면 '< SoftWare Info >' 여기까지 출력후 멤버내 값 조회가 불가능!
 		cpu->print_cpu_Info();
 		mb->print_MB_Info();
 		ram->print_Memorry_Info();
@@ -290,19 +290,42 @@ int main(void)
 {
 	// 샘플데이터
 	CPU cpu1("CPU1", "CPU001", "20220330-CP1-001");
+	CPU cpu2("CPU2", "CPU002", "20220330-CP2-001");
+	CPU cpu3("CPU3", "CPU003", "20220330-CP3-001");
+
 	MB mb1("MB1", "MB001", "20220330-MB1-001");
+	MB mb2("MB2", "MB002", "20220330-MB2-001");
+	MB mb3("MB3", "MB003", "20220330-MB3-001");
+
 	Memorry ram1("ram1", "ram001", "20220330-ram1-001");
+	Memorry ram2("ram2", "ram002", "20220330-ram2-001");
+	Memorry ram3("ram3", "ram003", "20220330-ram3-001");
+
 	HDD hdd1("hdd1", "hdd001", "20220330-hdd1-001");
+	HDD hdd2("hdd2", "hdd002", "20220330-hdd2-001");
+	HDD hdd3("hdd3", "hdd003", "20220330-hdd3-001");
+
 	SSD ssd1("ssd1", "ssd001", "20220330-ssd1-001");
+	SSD ssd2("ssd2", "ssd002", "20220330-ssd2-001");
+	SSD ssd3("ssd3", "ssd003", "20220330-ssd3-001");
+
 	Power pow1("pow1", "pow001", "20220330-pow1-001");
-	Case case1("case1", "case1001", "20220330-case1-001");
-	Software os1("os1", "os1001", "20220330-os1-001");
+	Power pow2("pow2", "pow002", "20220330-pow2-001");
+	Power pow3("pow3", "pow003", "20220330-pow3-001");
+
+	Case case1("case1", "case001", "20220330-case1-001");
+	Case case2("case2", "case002", "20220330-case2-001");
+	Case case3("case3", "case003", "20220330-case3-001");
+
+	Software os1("os1", "os001", "20220330-os1-001");
+	Software os2("os2", "os002", "20220330-os2-001");
+	Software os3("os3", "os003", "20220330-os3-001");
 	
 	int Num_product = 0;
 
 	product2* stub[100];
 
-	stub[0] = new product2("PC02", cpu1, mb1, ram1, hdd1, ssd1, pow1, case1, os1);
+	stub[Num_product++] = new product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
 	stub[0]->Print_produt();
 
 	return 0;
