@@ -52,10 +52,10 @@ void Handler::Init_Sample_ItemInfo(void)
 	Software os3("os3", "os003", "20220330-os3-001");
 
 	product2* stub[100];
-	product2 stub1[100];
+	//product2 stub1[100];
 
 	stub[0] = new product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
-	stub1[0] = product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
+	//stub1[0] = product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
 	// stub[0]->Print_produt();
 }
 
