@@ -122,6 +122,7 @@ void Handler::Show_BOM()
 void Handler::Show_NGInfo()
 {
 	cout << endl << "미구현" << endl << endl;
+	//
 }
 
 void Handler::manufature()
@@ -159,14 +160,74 @@ void Handler::Menu_ManufacturePlanning() {
 	}
 }
 
-void Handler::Add_ManufacturePlanning() {
-	cout << "미구현" << endl;
+
+void Handler::Add_ManufacturePlanning()				//(BOM에서 시리얼번호 받아옴)
+{
+	string sirial;
+	int date;
+	int amount;
+	string model;
+
+	//제품 받아와서 선택
+	cout << "===========================생산계획=============================" << endl;
+	///BOM에서 받아와 부품 리스트 출력
+
+	cout << "생산할 Srial번호를 입력하세요 : "; cin >> sirial;
+	//생산할 날짜, 개수 입력
+	cout << "생산할 날짜를 입력하세요 : "; cin >> date;
+	cout << "생산할 개수를 입력하세요 : "; cin >> amount;
+	cout << "생산할 모델을 선택해주세요 : "; cin >> model;
+
+	stub[Num_Memproduct++] = new Plan(sirial, date, amount);
+
+	cout << endl;
+	cout << "-------------------------" << endl;
+	stub[0]->Print_Plan();
+	cout << "-------------------------" << endl;
+	cout << endl;
+
+	//handler에 넘겨줄 생산계획 배열 생성
 }
 
-void Handler::Delete_ManufacturePlanning() {
-	cout << "미구현" << endl;
+void Handler::Show_ManufacturePlanning()              //모든 계획 출력
+{
+	vector<Plan*> plan;
+	vector<Plan*>::reverse_iterator iter;
+
+	cout << "-------------------------" << endl;
+	for (int i = 0; i < Num_Memproduct; i++)
+	{
+		plan.push_back(stub[i]);
+	}
+	for (iter = plan.rbegin(); iter != plan.rend(); ++iter)
+	{
+		(*iter)->Print_Plan();
+	}
+	/*for (int i = 0; i < Num_Memproduct; i++)
+		stub[i]->Print_Plan();*/
+	cout << "-------------------------" << endl;
+	system("pause");
 }
 
-void Handler::Show_ManufacturePlanning() {
-	cout << "미구현" << endl;
+void Handler::Delete_ManufacturePlanning()
+{
+	string sirial;
+	cout << "시리얼을 입력하세요" << endl;
+	cin >> sirial;
+
+	for (int i = 0; i < Num_Memproduct; i++)
+	{
+		if (sirial == stub[i]->getMemSrial())
+		{
+			delete stub[i];						//생산게획 시리얼 검색하여 삭제
+			for (int j = i; j < Num_Memproduct; j++)
+			{
+				stub[j] = stub[j + 1];			//삭제된 배열 뒤에 있는 배열을 한칸 앞으로 삽임
+			}
+			Num_Memproduct--;
+			cout << "계획을 삭제했습니다." << endl;
+			return;
+		}
+	}
+	cout << "해당 계획이 없습니다." << endl;
 }

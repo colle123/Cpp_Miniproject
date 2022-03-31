@@ -1,4 +1,5 @@
 #include"Item.h"
+#include <vector>
 
 class MES_ERR
 {
@@ -45,9 +46,20 @@ public:
 
 	void ShowAll_Err(void) const                  //모든 에러리스트 출력
 	{
+		vector<MES_ERR*> err;
+		vector<MES_ERR*>::reverse_iterator iter;
+
 		cout << "-------------------------" << endl;
 		for (int i = 0; i < Num_err; i++)
-			stub[i]->Print_Error();
+		{
+			err.push_back(stub[i]);
+		}
+		for (iter = err.rbegin(); iter != err.rend(); ++iter)
+		{
+			(*iter)->Print_Error();
+		}
+		/*for (int i = 0; i < Num_err; i++)
+			stub[i]->Print_Error();*/
 		cout << "-------------------------" << endl;
 	}
 
