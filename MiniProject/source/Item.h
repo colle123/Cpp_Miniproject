@@ -13,106 +13,121 @@ using namespace std;
 class Software
 {
 private:
-	char* Software_Name;			// Software 이름
-	char* Software_Num;				// Software 품번
-	char* Software_Searial;			// Software 시리얼번호
+	string Software_Name;           // Software 이름
+	string Software_Num;            // Software 품번
+	string Software_Searial;        // Software 시리얼번호
+	int proc;                       //작업 공정
 public:
 	Software() { };
-	Software(const char* aSoftware_Name, const char* aSoftware_Num, const char* aSoftware_Searial);
+	Software(string aSoftware_Name, string aSoftware_Num, string aSoftware_Searial, int proc = 1);
 	void print_software_Info() const;
+
 };
 
 class Power
 {
 private:
-	char* Power_Name;				// Power 이름
-	char* Power_Num;				// Power 품번
-	char* Power_Searial;			// Power 시리얼번호
+	string Power_Name;           // Power 이름
+	string Power_Num;            // Power 품번
+	string Power_Searial;        // Power 시리얼번호
+	int proc;                    //작업 공정
 public:
 	Power() { };
-	Power(const char* aPower_Name, const char* aPower_Num, const char* aPower_Searial);
+	Power(string aPower_Name, string aPower_Num, string aPower_Searial, int proc = 2);
 	void print_Power_Info() const;
+	Power& power_return();
 };
 
 class Case
 {
 private:
-	char* Case_Name;				// Case 이름
-	char* Case_Num;				// Case 품번
-	char* Case_Searial;			// Case 시리얼번호
+	string Case_Name;            // Case 이름
+	string Case_Num;             // Case 품번
+	string Case_Searial;         // Case 시리얼번호
+	int proc;                    //작업 공정
 public:
 	Case() { };
-	Case(const char* aCase_Name, const char* aCase_Num, const char* aCase_Searial);
+	Case(string aCase_Name, string aCase_Num, string aCase_Searial, int proc = 3);
 	void print_Case_Info() const;
+	Case& case_return();
 };
 
 class SSD
 {
 private:
-	char* SSD_Name;				// SSD 이름
-	char* SSD_Num;				// SSD 품번
-	char* SSD_Searial;			// SSD 시리얼번호
+	string SSD_Name;            // SSD 이름
+	string SSD_Num;             // SSD 품번
+	string SSD_Searial;         // SSD 시리얼번호
+	int proc;                   //작업 공정  
 public:
 	SSD() { };
-	SSD(const char* aSSD_Name, const char* aSSD_Num, const char* aSSD_Searial);
-
+	SSD(string aSSD_Name, string aSSD_Num, string aSSD_Searial, int proc = 4);
 	void print_SSD_Info() const;
-
+	SSD& ssd_return();
 };
 
 class HDD
 {
 private:
-	char* HDD_Name;				// HDD 이름
-	char* HDD_Num;				// HDD 품번
-	char* HDD_Searial;			// HDD 시리얼번호
+	string HDD_Name;            // HDD 이름
+	string HDD_Num;             // HDD 품번
+	string HDD_Searial;         // HDD 시리얼번호
+	int proc;                   //작업 공정
 public:
 	HDD() { };
-	HDD(const char* aHDD_Name, const char* aHDD_Num, const char* aHDD_Searial);
+	HDD(string aHDD_Name, string aHDD_Num, string aHDD_Searial, int proc = 5);
 	void print_HDD_Info() const;
+	HDD& hdd_return();
 };
 
 class Memorry
 {
 private:
-	char* Memorry_Name;				// Memorry 이름
-	char* Memorry_Num;				// Memorry 품번
-	char* Memorry_Searial;			// Memorry 시리얼번호
+	string Memorry_Name;           // Memorry 이름
+	string Memorry_Num;             // Memorry 품번
+	string Memorry_Searial;         // Memorry 시리얼번호
+	int proc;                       //작업 공정
 public:
 	Memorry() { };
-	Memorry(const char* aMemorry_Name, const char* aMemorry_Num, const char* aMemorry_Searial);
+	Memorry(string aMemorry_Name, string aMemorry_Num, string aMemorry_Searial, int proc = 6);
 	void print_Memorry_Info() const;
+	Memorry& Memorry_return();
 };
 
 class MB
 {
 private:
-	char* MB_Name;				// MB 이름
-	char* MB_Num;				// MB 품번
-	char* MB_Searial;			// MB 시리얼번호
+	string MB_Name;            // MB 이름
+	string MB_Num;             // MB 품번
+	string MB_Searial;         // MB 시리얼번호
+	int proc;                  //작업 공정
 public:
 	MB() { }
-	MB(const char* aMB_Name, const char* aMB_Num, const char* aMB_Searial);
+	MB(string aMB_Name, string aMB_Num, string aMB_Searial, int proc = 7);
 	void print_MB_Info() const;
+	MB& MB_return();
 };
 
 
 class CPU
 {
 private:
-	char* CPU_Name;				// CPU 이름
-	char* CPU_Num;				// CPU 품번
-	char* CPU_Searial;			// CPU 시리얼번호
+	string CPU_Name;              // CPU 이름
+	string CPU_Num;               // CPU 품번
+	string CPU_Searial;           // CPU 시리얼번호
+	int proc;                     //작업 공정
 public:
 	CPU() { }
-	CPU(const char* aCPU_Name, const char* aCPU_Num, const char* aCPU_Searial);
+	CPU(string aCPU_Name, string aCPU_Num, string aCPU_Searial, int proc = 8);
 	void print_cpu_Info() const;
+	CPU& CPU_return();
 };
 
-class product2 : public CPU, public MB, public Memorry, public HDD, public SSD, public Case, public Power, public Software
+
+class BOM 
 {
 private:
-	char* Product_Searial;
+	string Product_Searial;
 	CPU* cpu;
 	MB* mb;
 	Memorry* ram;
@@ -123,7 +138,8 @@ private:
 	Software* software_os;
 
 public:
-	product2(const char* aProduct_Searial, CPU& acpu, MB& amb, Memorry& aram, HDD& ahdd, SSD& assd, Power& apow, Case& apc_case, Software& asoftware_os);
+	BOM();
+	BOM(string aProduct_Searial, CPU acpu, MB amb, Memorry aram, HDD ahdd, SSD assd, Power apow, Case apc_case, Software asoftware_os);
 	void Print_produt() const;
 };
 

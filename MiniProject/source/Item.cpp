@@ -2,16 +2,11 @@
 
 // Software
 
-Software::Software(const char* aSoftware_Name, const char* aSoftware_Num, const char* aSoftware_Searial)
+Software::Software(string aSoftware_Name, string aSoftware_Num, string aSoftware_Searial, int proc = 1)
 {
-	Software_Name = new char[strlen(aSoftware_Name) + 1];
-	strcpy(Software_Name, aSoftware_Name);
-
-	Software_Num = new char[strlen(aSoftware_Num) + 1];
-	strcpy(Software_Num, aSoftware_Num);
-
-	Software_Searial = new char[strlen(aSoftware_Searial) + 1];
-	strcpy(Software_Searial, aSoftware_Searial);
+	Software_Name = aSoftware_Name;
+	Software_Num = aSoftware_Num;
+	Software_Searial = aSoftware_Searial;
 }
 
 void Software::print_software_Info() const
@@ -24,16 +19,11 @@ void Software::print_software_Info() const
 
 // Power
 
-Power::Power(const char* aPower_Name, const char* aPower_Num, const char* aPower_Searial)
+Power::Power(string aPower_Name, string aPower_Num, string aPower_Searial, int proc = 2)
 {
-	Power_Name = new char[strlen(aPower_Name) + 1];
-	strcpy(Power_Name, aPower_Name);
-
-	Power_Num = new char[strlen(aPower_Num) + 1];
-	strcpy(Power_Num, aPower_Num);
-
-	Power_Searial = new char[strlen(aPower_Searial) + 1];
-	strcpy(Power_Searial, aPower_Searial);
+	Power_Name = aPower_Name;
+	Power_Num = aPower_Num;
+	Power_Searial = aPower_Searial;
 }
 
 void Power::print_Power_Info() const
@@ -43,20 +33,18 @@ void Power::print_Power_Info() const
 	cout << this->Power_Num << endl;
 	cout << this->Power_Searial << endl << endl;
 }
-
+Power& Power::power_return()
+{
+	return *this;
+}
 
 // Case
 
-Case::Case(const char* aCase_Name, const char* aCase_Num, const char* aCase_Searial)
+Case::Case(string aCase_Name, string aCase_Num, string aCase_Searial, int proc = 3)
 {
-	Case_Name = new char[strlen(aCase_Name) + 1];
-	strcpy(Case_Name, aCase_Name);
-
-	Case_Num = new char[strlen(aCase_Num) + 1];
-	strcpy(Case_Num, aCase_Num);
-
-	Case_Searial = new char[strlen(aCase_Searial) + 1];
-	strcpy(Case_Searial, aCase_Searial);
+	Case_Name = aCase_Name;
+	Case_Num = aCase_Num;
+	Case_Searial = aCase_Searial;
 }
 
 void Case::print_Case_Info() const
@@ -66,20 +54,18 @@ void Case::print_Case_Info() const
 	cout << this->Case_Num << endl;
 	cout << this->Case_Searial << endl << endl;
 }
-
+Case& Case::case_return()
+{
+	return *this;
+}
 
 // SSD
 
-SSD::SSD(const char* aSSD_Name, const char* aSSD_Num, const char* aSSD_Searial)
+SSD::SSD(string aSSD_Name, string aSSD_Num, string aSSD_Searial, int proc = 4)
 {
-	SSD_Name = new char[strlen(aSSD_Name) + 1];
-	strcpy(SSD_Name, aSSD_Name);
-
-	SSD_Num = new char[strlen(aSSD_Num) + 1];
-	strcpy(SSD_Num, aSSD_Num);
-
-	SSD_Searial = new char[strlen(aSSD_Searial) + 1];
-	strcpy(SSD_Searial, aSSD_Searial);
+	SSD_Name = aSSD_Name;
+	SSD_Num = aSSD_Num;
+	SSD_Searial = aSSD_Searial;
 }
 
 void SSD::print_SSD_Info() const
@@ -89,20 +75,19 @@ void SSD::print_SSD_Info() const
 	cout << this->SSD_Num << endl;
 	cout << this->SSD_Searial << endl << endl;
 }
+SSD& SSD::ssd_return()
+{
+	return *this;
+}
 
 
 // HDD
 
-HDD::HDD(const char* aHDD_Name, const char* aHDD_Num, const char* aHDD_Searial)
+HDD::HDD(string aHDD_Name, string aHDD_Num, string aHDD_Searial, int proc = 5)
 {
-	HDD_Name = new char[strlen(aHDD_Name) + 1];
-	strcpy(HDD_Name, aHDD_Name);
-
-	HDD_Num = new char[strlen(aHDD_Num) + 1];
-	strcpy(HDD_Num, aHDD_Num);
-
-	HDD_Searial = new char[strlen(aHDD_Searial) + 1];
-	strcpy(HDD_Searial, aHDD_Searial);
+	HDD_Name = aHDD_Name;
+	HDD_Num = aHDD_Num;
+	HDD_Searial = aHDD_Searial;
 }
 
 void HDD::print_HDD_Info() const
@@ -112,20 +97,18 @@ void HDD::print_HDD_Info() const
 	cout << this->HDD_Num << endl;
 	cout << this->HDD_Searial << endl << endl;
 }
-
+HDD& HDD::hdd_return()
+{
+	return *this;
+}
 
 // Memorry
 
-Memorry::Memorry(const char* aMemorry_Name, const char* aMemorry_Num, const char* aMemorry_Searial)
+Memorry::Memorry(string aMemorry_Name, string aMemorry_Num, string aMemorry_Searial, int proc = 6)
 {
-	Memorry_Name = new char[strlen(aMemorry_Name) + 1];
-	strcpy(Memorry_Name, aMemorry_Name);
-
-	Memorry_Num = new char[strlen(aMemorry_Num) + 1];
-	strcpy(Memorry_Num, aMemorry_Num);
-
-	Memorry_Searial = new char[strlen(aMemorry_Searial) + 1];
-	strcpy(Memorry_Searial, aMemorry_Searial);
+	Memorry_Name = aMemorry_Name;
+	Memorry_Num = aMemorry_Num;
+	Memorry_Searial = aMemorry_Searial;
 }
 
 void Memorry::print_Memorry_Info() const
@@ -135,20 +118,18 @@ void Memorry::print_Memorry_Info() const
 	cout << this->Memorry_Num << endl;
 	cout << this->Memorry_Searial << endl << endl;
 }
-
+Memorry& Memorry::Memorry_return()
+{
+	return *this;
+}
 
 // MB
 
-MB::MB(const char* aMB_Name, const char* aMB_Num, const char* aMB_Searial)
+MB::MB(string aMB_Name, string aMB_Num, string aMB_Searial, int proc = 7)
 {
-	MB_Name = new char[strlen(aMB_Name) + 1];
-	strcpy(MB_Name, aMB_Name);
-
-	MB_Num = new char[strlen(aMB_Num) + 1];
-	strcpy(MB_Num, aMB_Num);
-
-	MB_Searial = new char[strlen(aMB_Searial) + 1];
-	strcpy(MB_Searial, aMB_Searial);
+	MB_Name = aMB_Name;
+	MB_Num = aMB_Num;
+	MB_Searial = aMB_Searial;
 }
 void MB::print_MB_Info() const
 {
@@ -157,20 +138,19 @@ void MB::print_MB_Info() const
 	cout << this->MB_Num << endl;
 	cout << this->MB_Searial << endl << endl;
 }
+MB& MB::MB_return()
+{
+	return *this;
+}
 
 
 // CPU
 
-CPU::CPU(const char* aCPU_Name, const char* aCPU_Num, const char* aCPU_Searial)
+CPU::CPU(string aCPU_Name, string aCPU_Num, string aCPU_Searial, int proc = 8)
 {
-	CPU_Name = new char[strlen(aCPU_Name) + 1];
-	strcpy(CPU_Name, aCPU_Name);
-
-	CPU_Num = new char[strlen(aCPU_Num) + 1];
-	strcpy(CPU_Num, aCPU_Num);
-
-	CPU_Searial = new char[strlen(aCPU_Searial) + 1];
-	strcpy(CPU_Searial, aCPU_Searial);
+	CPU_Name = aCPU_Name;
+	CPU_Num = aCPU_Num;
+	CPU_Searial = aCPU_Searial;
 }
 void CPU::print_cpu_Info() const
 {
@@ -180,13 +160,18 @@ void CPU::print_cpu_Info() const
 	cout << this->CPU_Searial << endl << endl;
 }
 
+CPU& CPU::CPU_return()
+{
+	return *this;
+}
 
 
-// product2
 
+// BOM
 
-product2::product2(const char* aProduct_Searial, CPU& acpu, MB& amb, Memorry& aram, HDD& ahdd, SSD& assd, Power& apow, Case& apc_case, Software& asoftware_os)
-//:cpu(acpu) mb(amb), ram(aram), hdd(ahdd), ssd(assd), pc_case(apc_case), pow(apow), software_os(asoftware_os)
+BOM::BOM() {}
+
+BOM::BOM(string aProduct_Searial, CPU acpu, MB amb, Memorry aram, HDD ahdd, SSD assd, Power apow, Case apc_case, Software asoftware_os)
 {
 	// 멤버변수가 포인터 이므로 얘들이 가리킬 녀석을 임시로 만들어줘야함
 	cpu = new CPU(acpu);
@@ -198,11 +183,10 @@ product2::product2(const char* aProduct_Searial, CPU& acpu, MB& amb, Memorry& ar
 	pow = new Power(apow);
 	software_os = new Software(asoftware_os);
 
-	Product_Searial = new char[strlen(aProduct_Searial) + 1];
-	strcpy(Product_Searial, aProduct_Searial);
+	Product_Searial = aProduct_Searial;
 }
 
-void product2::Print_produt() const
+void BOM::Print_produt() const
 {
 	// 각 클래스의 멤버는 private이므로 해당 클래스에서 함수로 접근해야 멤버의 값을 참조가능
 	// 즉, print_cpu_Info();를 그냥 쓰면 '< SoftWare Info >' 여기까지 출력후 멤버내 값 조회가 불가능!

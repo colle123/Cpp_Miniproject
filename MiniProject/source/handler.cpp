@@ -1,5 +1,6 @@
 #include"handler.h"
 #include"Item.h"
+#include"PoP.h"
 
 
 Handler::Handler() {}
@@ -19,44 +20,37 @@ void Handler::Menu_Main(void)
 
 void Handler::Init_Sample_ItemInfo(void)
 {
-	CPU cpu1("CPU1", "CPU001", "20220330-CP1-001");
-	CPU cpu2("CPU2", "CPU002", "20220330-CP2-001");
-	CPU cpu3("CPU3", "CPU003", "20220330-CP3-001");
+	cpu[cpu_count++] = CPU("CPU1", "CPU001", "20220330-CP1-001");
+	cpu[cpu_count++] = CPU("CPU2", "CPU002", "20220330-CP2-001");
+	cpu[cpu_count++] = CPU("CPU3", "CPU003", "20220330-CP3-001");
 
-	MB mb1("MB1", "MB001", "20220330-MB1-001");
-	MB mb2("MB2", "MB002", "20220330-MB2-001");
-	MB mb3("MB3", "MB003", "20220330-MB3-001");
+	mb[mb_count++] = MB("MB1", "MB001", "20220330-MB1-001");
+	mb[mb_count++] = MB("MB2", "MB002", "20220330-MB2-001");
+	mb[mb_count++] = MB("MB3", "MB003", "20220330-MB3-001");
 
-	Memorry ram1("ram1", "ram001", "20220330-ram1-001");
-	Memorry ram2("ram2", "ram002", "20220330-ram2-001");
-	Memorry ram3("ram3", "ram003", "20220330-ram3-001");
+	ram[ram_count++] = Memorry("ram1", "ram001", "20220330-ram1-001");
+	ram[ram_count++] = Memorry("ram2", "ram002", "20220330-ram2-001");
+	ram[ram_count++] = Memorry("ram3", "ram003", "20220330-ram3-001");
 
-	HDD hdd1("hdd1", "hdd001", "20220330-hdd1-001");
-	HDD hdd2("hdd2", "hdd002", "20220330-hdd2-001");
-	HDD hdd3("hdd3", "hdd003", "20220330-hdd3-001");
+	hdd[hdd_count++] = HDD("hdd1", "hdd001", "20220330-hdd1-001");
+	hdd[hdd_count++] = HDD("hdd2", "hdd002", "20220330-hdd2-001");
+	hdd[hdd_count++] = HDD("hdd3", "hdd003", "20220330-hdd3-001");
 
-	SSD ssd1("ssd1", "ssd001", "20220330-ssd1-001");
-	SSD ssd2("ssd2", "ssd002", "20220330-ssd2-001");
-	SSD ssd3("ssd3", "ssd003", "20220330-ssd3-001");
+	ssd[ssd_count++] = SSD("ssd1", "ssd001", "20220330-ssd1-001");
+	ssd[ssd_count++] = SSD("ssd2", "ssd002", "20220330-ssd2-001");
+	ssd[ssd_count++] = SSD("ssd3", "ssd003", "20220330-ssd3-001");
 
-	Power pow1("pow1", "pow001", "20220330-pow1-001");
-	Power pow2("pow2", "pow002", "20220330-pow2-001");
-	Power pow3("pow3", "pow003", "20220330-pow3-001");
+	pow[pow_count++] = Power("pow1", "pow001", "20220330-pow1-001");
+	pow[pow_count++] = Power("pow2", "pow002", "20220330-pow2-001");
+	pow[pow_count++] = Power("pow3", "pow003", "20220330-pow3-001");
 
-	Case case1("case1", "case001", "20220330-case1-001");
-	Case case2("case2", "case002", "20220330-case2-001");
-	Case case3("case3", "case003", "20220330-case3-001");
+	case1[case1_count++] = Case("case1", "case1001", "20220330-case1-001");
+	case1[case1_count++] = Case("case2", "case1002", "20220330-case2-001");
+	case1[case1_count++] = Case("case3", "case1003", "20220330-case3-001");
 
-	Software os1("os1", "os001", "20220330-os1-001");
-	Software os2("os2", "os002", "20220330-os2-001");
-	Software os3("os3", "os003", "20220330-os3-001");
-
-	product2* stub[100];
-	//product2 stub1[100];
-
-	stub[0] = new product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
-	//stub1[0] = product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
-	// stub[0]->Print_produt();
+	os[os_count++] = Software("os1", "os1001", "20220330-os1-001");
+	os[os_count++] = Software("os2", "os1002", "20220330-os2-001");
+	os[os_count++] = Software("os3", "os1003", "20220330-os3-001");
 }
 
 void Handler::Menu_BOM(void)
@@ -105,7 +99,30 @@ void Handler::Menu_BOM(void)
 
 void Handler::Add_BOM()
 {
-	cout << endl << "미구현" << endl << endl;
+	string name;
+	int cpu_sel, mb_sel, ram_sel, hdd_sel, ssd_sel, pow_sel, case1_sel, os_sel;
+	cout << "등록할 제품 이름을 입력해주세요: ";
+	cin >> name;
+	cout << "CPU를 선택해주세요: ";
+	cin >> cpu_sel;
+	cout << "M/B를 선택해주세요: ";
+	cin >> mb_sel;
+	cout << "Memory를 선택해주세요: ";
+	cin >> ram_sel;
+	cout << "HDD를 선택해주세요: ";
+	cin >> hdd_sel;
+	cout << "SSD를 선택해주세요: ";
+	cin >> ssd_sel;
+	cout << "POWER를 선택해주세요: ";
+	cin >> pow_sel;
+	cout << "CASE를 선택해주세요: ";
+	cin >> case1_sel;
+	cout << "OS를 선택해주세요: ";
+	cin >> os_sel;
+	temp[Num_product++] = new BOM(name, cpu[cpu_sel], mb[mb_sel], ram[ram_sel], hdd[hdd_sel], ssd[ssd_sel], pow[pow_sel], case1[case1_sel], os[os_sel]);
+	temp1[Num_product1++] = BOM(name, cpu[cpu_sel], mb[mb_sel], ram[ram_sel], hdd[hdd_sel], ssd[ssd_sel], pow[pow_sel], case1[case1_sel], os[os_sel]);
+
+	pop[number++] = new POP(temp1[0]);
 }
 
 void Handler::Delete_BOM()
@@ -115,14 +132,16 @@ void Handler::Delete_BOM()
 
 void Handler::Show_BOM()
 {
-	cout << endl << "미구현" << endl << endl;
+	for (int i = 0; i < Num_product; i++) {
+		/*temp[i]->Print_produt();*/
+		pop[i]->showpop();
+	}
 }
 
 
 void Handler::Show_NGInfo()
 {
 	cout << endl << "미구현" << endl << endl;
-	//
 }
 
 void Handler::manufature()
@@ -231,3 +250,4 @@ void Handler::Delete_ManufacturePlanning()
 	}
 	cout << "해당 계획이 없습니다." << endl;
 }
+
