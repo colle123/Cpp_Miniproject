@@ -17,9 +17,9 @@ public:
 
 	// BOM
 	void Menu_BOM();
-	//void Add_BOM();
-	//void Delete_BOM();
-	//void Show_BOM();
+	void Add_BOM();
+	void Delete_BOM();
+	void Show_BOM();
 	
 	//// »ý»ê°èÈ¹
 	void Menu_ManufacturePlanning();
