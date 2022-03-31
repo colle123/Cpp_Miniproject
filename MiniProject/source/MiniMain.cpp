@@ -23,7 +23,7 @@ int main(void)
 
 		if (Select_main == 1)		// 1.1 BOM
 		{
-
+			manager.Menu_BOM();
 		}
 
 		else if (Select_main == 2)	// 1.2 »ý»ê°èÈ¹
