@@ -8,7 +8,7 @@ Handler::Handler() {}
 void Handler::Menu_Main(void)
 {
 	cout << endl;
-	cout << "-----Menu-----" << endl;
+	cout << "-----Main Menu-----" << endl;
 	cout << endl;
 	cout << "1. BOM" << endl;
 	cout << "2. 생산계획" << endl;
@@ -55,4 +55,64 @@ void Handler::Init_Sample_ItemInfo(void)
 
 	stub[0] = new product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
 	//stub[0]->Print_produt();
+}
+
+void Handler::Menu_BOM(void)
+{
+	int Select_BOM;
+
+	while (1)
+	{
+		cout << endl;
+		cout << "-----BOM Menu-----" << endl;
+		cout << endl;
+		cout << "1. BOM 추가" << endl;
+		cout << "2. BOM 조회" << endl;
+		cout << "3. BOM 삭제" << endl;
+		cout << "4. 뒤로가기" << endl;
+		cout << "선택 : ";
+		cin >> Select_BOM;
+
+		if (Select_BOM == 1)
+		{
+			Add_BOM();
+		}
+		else if (Select_BOM == 2)
+		{
+			Show_BOM();
+		}
+
+		else if (Select_BOM == 3)
+		{
+			Delete_BOM();
+		}
+
+		else if (Select_BOM == 4)
+		{
+			break;
+		}
+
+		else
+		{
+			while (getchar() != '\n');
+			cout << "잘못된 입력값입니다." << endl;
+		}
+	}
+
+
+}
+
+void Handler::Add_BOM()
+{
+	cout << endl << "미구현" << endl << endl;
+}
+
+void Handler::Delete_BOM()
+{
+	cout << endl << "미구현" << endl << endl;
+}
+
+void Handler::Show_BOM()
+{
+	cout << endl << "미구현" << endl << endl;
 }

@@ -1,16 +1,17 @@
 #include"Item.h"
 #include"handler.h"
 
+static int Num_product = 0;
 
 int main(void)
 {
-	static int Num_product = 0;
+
 	int Select_main = 0;
 	Handler manager;
 	product2* stub[100];
 
 	
-	// 샘플데이터 삽입 및 들어갔는지 확인
+	// 샘플데이터 삽입
 	manager.Init_Sample_ItemInfo();
 	
 	
@@ -23,7 +24,7 @@ int main(void)
 
 		if (Select_main == 1)		// 1.1 BOM
 		{
-
+			manager.Menu_BOM();
 		}
 
 		else if (Select_main == 2)	// 1.2 생산계획
