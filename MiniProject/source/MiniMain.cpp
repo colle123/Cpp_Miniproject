@@ -8,7 +8,7 @@ int main(void)
 
 	int Select_main = 0;
 	Handler manager;
-	product2* stub[100];
+	// product2* stub[100];
 
 	
 	// 샘플데이터 삽입
@@ -29,17 +29,17 @@ int main(void)
 
 		else if (Select_main == 2)	// 1.2 생산계획
 		{
-
+			manager.Menu_ManufacturePlanning();
 		}
 
 		else if (Select_main == 3)	// 1.3 공정
 		{
-
+			manager.manufature();
 		}
 
 		else if (Select_main == 4)	// 1.4 불량확인
 		{
-
+			manager.Show_NGInfo();
 		}
 
 		else if (Select_main == 5)	// 1.5 종료

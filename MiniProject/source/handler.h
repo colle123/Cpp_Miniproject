@@ -21,14 +21,17 @@ public:
 	void Delete_BOM();
 	void Show_BOM();
 	
-	//// 생산계획
+	// 생산계획
 	void Menu_ManufacturePlanning();
-	//void Add_ManufacturePlanning();
-	//void Delete_ManufacturePlanning();
-	//void Show_ManufacturePlanning();
+	void Add_ManufacturePlanning();
+	void Delete_ManufacturePlanning();
+	void Show_ManufacturePlanning();
 	
-	//// 불량정보
-	//void Show_NG_List();
+	// 공정
+	void manufature();
+
+	// 불량정보
+	void Show_NGInfo();
 
 };
 
