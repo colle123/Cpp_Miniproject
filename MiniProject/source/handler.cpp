@@ -8,7 +8,7 @@ Handler::Handler() {}
 void Handler::Menu_Main(void)
 {
 	cout << endl;
-	cout << "-----Main Menu-----" << endl;
+	cout << "=====[Main]=====" << endl;
 	cout << endl;
 	cout << "1. BOM" << endl;
 	cout << "2. 생산계획" << endl;
@@ -64,7 +64,7 @@ void Handler::Menu_BOM(void)
 	while (1)
 	{
 		cout << endl;
-		cout << "-----BOM Menu-----" << endl;
+		cout << "=====[BOM]=====" << endl;
 		cout << endl;
 		cout << "1. BOM 추가" << endl;
 		cout << "2. BOM 조회" << endl;
@@ -98,8 +98,6 @@ void Handler::Menu_BOM(void)
 			cout << "잘못된 입력값입니다." << endl;
 		}
 	}
-
-
 }
 
 void Handler::Add_BOM()
@@ -115,4 +113,52 @@ void Handler::Delete_BOM()
 void Handler::Show_BOM()
 {
 	cout << endl << "미구현" << endl << endl;
+}
+
+
+void Handler::Show_NGInfo()
+{
+	cout << endl << "미구현" << endl << endl;
+}
+
+void Handler::manufature()
+{
+	cout << endl << "미구현" << endl << endl;
+}
+
+void Handler::Menu_ManufacturePlanning() {
+	int choice;
+
+	while (1) {
+		cout << endl;
+		cout << "=====[생산계획]=====" << endl;
+		cout << endl;
+		cout << "1. 생산계획 추가" << endl;
+		cout << "2. 생산계획 삭제" << endl;
+		cout << "3. 생산계획 조회" << endl;
+		cout << "4. 뒤로가기" << endl << endl;
+		cout << "입력 : "; cin >> choice;
+
+		if (choice == 1)
+			Add_ManufacturePlanning();
+		else if (choice == 2)
+			Delete_ManufacturePlanning();
+		else if (choice == 3)
+			Show_ManufacturePlanning();
+		else if (choice == 4)
+			break;
+		else cout << "잘못된 입력입니다." << endl;
+	}
+}
+
+void Handler::Add_ManufacturePlanning() {
+	cout << "미구현" << endl;
+}
+
+void Handler::Delete_ManufacturePlanning() {
+	cout << "미구현" << endl;
+}
+
+void Handler::Show_ManufacturePlanning() {
+	cout << "미구현" << endl;
 }
