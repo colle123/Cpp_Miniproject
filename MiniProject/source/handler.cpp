@@ -122,6 +122,7 @@ void Handler::Show_BOM()
 void Handler::Show_NGInfo()
 {
 	cout << endl << "¹Ì±¸Çö" << endl << endl;
+	//
 }
 
 void Handler::manufature()
