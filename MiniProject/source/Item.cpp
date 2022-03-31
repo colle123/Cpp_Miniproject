@@ -2,7 +2,6 @@
 
 // Software
 
-//Software::Software() { }
 Software::Software(const char* aSoftware_Name, const char* aSoftware_Num, const char* aSoftware_Searial)
 {
 	Software_Name = new char[strlen(aSoftware_Name) + 1];
@@ -25,7 +24,6 @@ void Software::print_software_Info() const
 
 // Power
 
-//Power::Power() { }
 Power::Power(const char* aPower_Name, const char* aPower_Num, const char* aPower_Searial)
 {
 	Power_Name = new char[strlen(aPower_Name) + 1];
@@ -49,7 +47,6 @@ void Power::print_Power_Info() const
 
 // Case
 
-//Case::Case() { }
 Case::Case(const char* aCase_Name, const char* aCase_Num, const char* aCase_Searial)
 {
 	Case_Name = new char[strlen(aCase_Name) + 1];
@@ -73,7 +70,6 @@ void Case::print_Case_Info() const
 
 // SSD
 
-//SSD::SSD() { }
 SSD::SSD(const char* aSSD_Name, const char* aSSD_Num, const char* aSSD_Searial)
 {
 	SSD_Name = new char[strlen(aSSD_Name) + 1];
@@ -97,7 +93,6 @@ void SSD::print_SSD_Info() const
 
 // HDD
 
-//HDD::HDD() { }
 HDD::HDD(const char* aHDD_Name, const char* aHDD_Num, const char* aHDD_Searial)
 {
 	HDD_Name = new char[strlen(aHDD_Name) + 1];
@@ -121,7 +116,6 @@ void HDD::print_HDD_Info() const
 
 // Memorry
 
-//Memorry::Memorry() { }
 Memorry::Memorry(const char* aMemorry_Name, const char* aMemorry_Num, const char* aMemorry_Searial)
 {
 	Memorry_Name = new char[strlen(aMemorry_Name) + 1];
@@ -145,7 +139,6 @@ void Memorry::print_Memorry_Info() const
 
 // MB
 
-//MB::MB() { }
 MB::MB(const char* aMB_Name, const char* aMB_Num, const char* aMB_Searial)
 {
 	MB_Name = new char[strlen(aMB_Name) + 1];
@@ -168,7 +161,6 @@ void MB::print_MB_Info() const
 
 // CPU
 
-//CPU::CPU() { }
 CPU::CPU(const char* aCPU_Name, const char* aCPU_Num, const char* aCPU_Searial)
 {
 	CPU_Name = new char[strlen(aCPU_Name) + 1];
@@ -189,11 +181,12 @@ void CPU::print_cpu_Info() const
 }
 
 
+
 // product2
 
 
 product2::product2(const char* aProduct_Searial, CPU& acpu, MB& amb, Memorry& aram, HDD& ahdd, SSD& assd, Power& apow, Case& apc_case, Software& asoftware_os)
-	//:cpu(acpu) mb(amb), ram(aram), hdd(ahdd), ssd(assd), pc_case(apc_case), pow(apow), software_os(asoftware_os)
+//:cpu(acpu) mb(amb), ram(aram), hdd(ahdd), ssd(assd), pc_case(apc_case), pow(apow), software_os(asoftware_os)
 {
 	// 멤버변수가 포인터 이므로 얘들이 가리킬 녀석을 임시로 만들어줘야함
 	cpu = new CPU(acpu);

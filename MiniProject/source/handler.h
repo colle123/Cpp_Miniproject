@@ -20,13 +20,13 @@ public:
 	void Add_BOM();
 	void Delete_BOM();
 	void Show_BOM();
-	
+
 	// 생산계획
 	void Menu_ManufacturePlanning();
 	void Add_ManufacturePlanning();
 	void Delete_ManufacturePlanning();
 	void Show_ManufacturePlanning();
-	
+
 	// 공정
 	void manufature();
 

@@ -1,4 +1,3 @@
-
 #include"handler.h"
 #include"Item.h"
 
@@ -7,6 +6,7 @@ Handler::Handler() {}
 
 void Handler::Menu_Main(void)
 {
+	system("cls");
 	cout << endl;
 	cout << "=====[Main]=====" << endl;
 	cout << endl;
@@ -52,9 +52,11 @@ void Handler::Init_Sample_ItemInfo(void)
 	Software os3("os3", "os003", "20220330-os3-001");
 
 	product2* stub[100];
+	product2 stub1[100];
 
 	stub[0] = new product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
-	//stub[0]->Print_produt();
+	stub1[0] = product2("PC02", cpu1, mb2, ram1, hdd3, ssd1, pow3, case2, os1);
+	// stub[0]->Print_produt();
 }
 
 void Handler::Menu_BOM(void)
@@ -63,6 +65,7 @@ void Handler::Menu_BOM(void)
 
 	while (1)
 	{
+		system("cls");
 		cout << endl;
 		cout << "=====[BOM]=====" << endl;
 		cout << endl;
@@ -123,13 +126,18 @@ void Handler::Show_NGInfo()
 
 void Handler::manufature()
 {
-	cout << endl << "미구현" << endl << endl;
+	cout << endl << "CPU 조립중...OK" << endl << endl;
+	cout << endl << "CPU 조립중...OK" << endl << endl;
+	cout << endl << "CPU 조립중...OK" << endl << endl;
+	cout << endl << "POWER 조립중...NG" << endl << endl;
+	cout << endl << "!!! 오류발생 !!!" << endl << endl;
 }
 
 void Handler::Menu_ManufacturePlanning() {
 	int choice;
 
 	while (1) {
+		system("cls");
 		cout << endl;
 		cout << "=====[생산계획]=====" << endl;
 		cout << endl;
