@@ -20,7 +20,7 @@ public:
 	}
 };
 
-class Plan
+class MES
 {
 private:
 	int Num_err = 0;
@@ -31,19 +31,14 @@ public:
 	{
 		string sirial;
 
+
 		//제품 받아와서 선택
 		cout << "===========================오류 리스트=============================" << endl;
 		///POP에서 받아와 에러 리스트 출력
 
-		cout << "에러체크할 제품 Srial번호를 입력하세요" << endl;
-		cin >> sirial;
+		cout << "에러체크할 제품 Srial번호를 입력하세요 : "; cin >> sirial;
 
-		for (int i = 0; i < Num_err; i++)
-		{
-			if (sirial == stub[i]->getMemSrial())
-				stub[Num_err++] = new MES_ERR(sirial);
-		}
-		
+		stub[Num_err++] = new MES_ERR(sirial);
 
 		//handler에 넘겨줄 에러리스트 배열 생성
 	}
@@ -57,11 +52,12 @@ public:
 	}
 
 	///////////////////////////////////////////////////////////bom코드, 생산계획코드, 개수 리턴
-	~Plan()                                   //소멸자
+	~MES()                                   //소멸자
 	{
 		for (int i = 0; i < Num_err; i++)
 			delete stub[i];
 	}
 };
+
 
 

@@ -147,7 +147,7 @@
   <ItemGroup>
     <ClInclude Include="handler.h" />
     <ClInclude Include="Item.h" />
-    <ClInclude Include="mes_plan.h" />
+    <ClInclude Include="mes_plan.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
