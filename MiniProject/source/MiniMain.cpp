@@ -10,11 +10,11 @@ int main(void)
 	Handler manager;
 	// product2* stub[100];
 
-	
+
 	// 샘플데이터 삽입
 	manager.Init_Sample_ItemInfo();
-	
-	
+
+
 	while (1)
 	{
 		manager.Menu_Main();
@@ -52,7 +52,7 @@ int main(void)
 			while (getchar() != '\n');
 			cout << "잘못된 입력값입니다." << endl;
 		}
-		
+
 
 	}
 
