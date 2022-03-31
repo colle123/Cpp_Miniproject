@@ -34,9 +34,43 @@ class Handler
 private:
 	int Num_Memproduct = 0;
 	Plan* stub[100];
+	
+	CPU cpu[100];
+	int cpu_count = 0;
+
+	MB mb[100];
+	int mb_count = 0;
+
+	Memorry ram[100];
+	int ram_count = 0;
+
+	HDD hdd[100];
+	int hdd_count = 0;
+
+	SSD ssd[100];
+	int ssd_count = 0;
+
+	Power pow[100];
+	int pow_count = 0;
+
+	Case case1[100];
+	int case1_count = 0;
+
+	Software os[100];
+	int os_count = 0;
+
+	BOM *temp[100];
+	int Num_product = 0;
+
+    BOM temp1[100];
+    int Num_product1 = 0;
+
+    POP *pop[100];
+    int number = 0;
 
 public:
 	Handler(void);
+
 	// 샘플데이터입력
 	void Init_Sample_ItemInfo(void);
 

@@ -143,11 +143,13 @@
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\mes_err.cpp" />
     <ClCompile Include="source\MiniMain.cpp" />
+    <ClCompile Include="source\Pop.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\handler.h" />
     <ClInclude Include="source\Item.h" />
     <ClInclude Include="source\mes_plan.cpp" />
+    <ClInclude Include="source\PoP.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
