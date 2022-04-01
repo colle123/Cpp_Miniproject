@@ -77,15 +77,16 @@ void Handler::AddError_2_1()   //값을 반환하기 위한 메뉴
     switch (sel)
     {
     case 1:
+        Err_part = 1;
         AddError_3_1_1(); 
         break;
     case 2:
+        Err_part = 2;
         AddError_3_1_2();
-                         
         break;
     case 3:
-        AddError_3_1_3();
-                        
+        Err_part = 3;
+        AddError_3_1_3();                        
         break;
     }
 
