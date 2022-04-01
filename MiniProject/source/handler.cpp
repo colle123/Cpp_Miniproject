@@ -1,9 +1,18 @@
+
+#pragma once
 #include"handler.h"
 #include"Item.h"
-#include"PoP.h"
-
 
 Handler::Handler() {}
+
+template <typename T>
+void print_product_for(T product, int count)
+{
+	for (int i = 0; i < count; i++)
+	{
+		product[i].print_Info();
+	}
+}
 
 void Handler::Menu_Main(void)
 {
@@ -99,30 +108,49 @@ void Handler::Menu_BOM(void)
 
 void Handler::Add_BOM()
 {
-	string name;
+	string name, serial_num;
 	int cpu_sel, mb_sel, ram_sel, hdd_sel, ssd_sel, pow_sel, case1_sel, os_sel;
 	cout << "등록할 제품 이름을 입력해주세요: ";
 	cin >> name;
+	cout << "시리얼번호를 입력해주세요: ";
+	cin >> serial_num;
+
+	print_product_for(cpu, cpu_count);
 	cout << "CPU를 선택해주세요: ";
 	cin >> cpu_sel;
+
+	print_product_for(mb, mb_count);
 	cout << "M/B를 선택해주세요: ";
 	cin >> mb_sel;
+
+	print_product_for(ram, ram_count);
 	cout << "Memory를 선택해주세요: ";
 	cin >> ram_sel;
+
+	print_product_for(hdd, hdd_count);
 	cout << "HDD를 선택해주세요: ";
 	cin >> hdd_sel;
+
+	print_product_for(ssd, ssd_count);
 	cout << "SSD를 선택해주세요: ";
 	cin >> ssd_sel;
+
+	print_product_for(pow, pow_count);
 	cout << "POWER를 선택해주세요: ";
 	cin >> pow_sel;
+
+	print_product_for(case1, case1_count);
 	cout << "CASE를 선택해주세요: ";
 	cin >> case1_sel;
+
+	print_product_for(os, os_count);
 	cout << "OS를 선택해주세요: ";
 	cin >> os_sel;
-	temp[Num_product++] = new BOM(name, cpu[cpu_sel], mb[mb_sel], ram[ram_sel], hdd[hdd_sel], ssd[ssd_sel], pow[pow_sel], case1[case1_sel], os[os_sel]);
-	temp1[Num_product1++] = BOM(name, cpu[cpu_sel], mb[mb_sel], ram[ram_sel], hdd[hdd_sel], ssd[ssd_sel], pow[pow_sel], case1[case1_sel], os[os_sel]);
+	temp[Num_product++] = new BOM(name, serial_num, cpu[cpu_sel], mb[mb_sel], ram[ram_sel], hdd[hdd_sel], ssd[ssd_sel], pow[pow_sel], case1[case1_sel], os[os_sel]);
+	temp1[Num_product1++] = BOM(name, serial_num, cpu[cpu_sel], mb[mb_sel], ram[ram_sel], hdd[hdd_sel], ssd[ssd_sel], pow[pow_sel], case1[case1_sel], os[os_sel]);
 
-	pop[number++] = new POP(temp1[0]);
+	//(2)pop에 BOM 넣는과정(지워도 될부분) 
+	/*pop[number++] = new POP(temp1[0]);*/
 }
 
 void Handler::Delete_BOM()
@@ -133,9 +161,10 @@ void Handler::Delete_BOM()
 void Handler::Show_BOM()
 {
 	for (int i = 0; i < Num_product; i++) {
-		/*temp[i]->Print_produt();*/
-		pop[i]->showpop();
+		temp[i]->Print_produt();
+		//pop[i]->showpop();
 	}
+	system("pause");
 }
 
 
@@ -151,6 +180,7 @@ void Handler::manufature()
 	cout << endl << "CPU 조립중...OK" << endl << endl;
 	cout << endl << "POWER 조립중...NG" << endl << endl;
 	cout << endl << "!!! 오류발생 !!!" << endl << endl;
+	system("pause");
 }
 
 void Handler::Menu_ManufacturePlanning() {
@@ -204,6 +234,7 @@ void Handler::Add_ManufacturePlanning()				//(BOM에서 시리얼번호 받아옴)
 	stub[0]->Print_Plan();
 	cout << "-------------------------" << endl;
 	cout << endl;
+	system("pause");
 
 	//handler에 넘겨줄 생산계획 배열 생성
 }
@@ -245,9 +276,11 @@ void Handler::Delete_ManufacturePlanning()
 			}
 			Num_Memproduct--;
 			cout << "계획을 삭제했습니다." << endl;
+			system("pause");
 			return;
 		}
 	}
 	cout << "해당 계획이 없습니다." << endl;
+	system("pause");
 }
 

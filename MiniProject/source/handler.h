@@ -1,7 +1,9 @@
 #ifndef __HANDLER_H__
 #define __HANDLER_H__
 
+#pragma once
 #include"Item.h"
+//#include"PoP.h"
 
 class Plan
 {
@@ -65,7 +67,7 @@ private:
     BOM temp1[100];
     int Num_product1 = 0;
 
-    POP *pop[100];
+    //POP *pop[100];
     int number = 0;
 
 public:

@@ -1,7 +1,7 @@
-#pragma once;
+#pragma once
 #include"Item.h"
 #include"handler.h"
-#include"PoP.h"
+//#include"PoP.h"
 
 static int Num_product = 0;
 
