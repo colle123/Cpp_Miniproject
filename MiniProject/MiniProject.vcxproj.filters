@@ -27,21 +27,12 @@
     <ClCompile Include="source\MiniMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="source\Pop.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Item.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="source\handler.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="source\mes_plan.cpp">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="source\PoP.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
