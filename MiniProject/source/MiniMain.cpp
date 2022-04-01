@@ -7,7 +7,8 @@ static int Num_product = 0;
 
 int main(void)
 {
-
+	int err_num[100] = { 1 };
+	int num_err_list = 0;
 	int Select_main = 0;
 	Handler manager;
 	// product2* stub[100];
@@ -19,6 +20,7 @@ int main(void)
 
 	while (1)
 	{
+		
 		manager.Menu_Main();
 		cout << "선택 : ";
 		cin >> Select_main;
@@ -36,12 +38,15 @@ int main(void)
 
 		else if (Select_main == 3)	// 1.3 공정
 		{
-			manager.manufature();
+			err_num[num_err_list++]=manager.manufature();
 		}
 
 		else if (Select_main == 4)	// 1.4 불량확인
 		{
-			manager.Show_NGInfo();
+			cout << endl << "< 오류 정보 >" << endl << endl;
+			for(int i = 0;i < num_err_list;i++)
+				manager.Show_NGInfo(err_num[i]);
+			system("pause");
 		}
 
 		else if (Select_main == 5)	// 1.5 종료
