@@ -24,9 +24,11 @@ public:
 
 	virtual void Print_Plan() const
 	{
+		cout << "-------------------------" << endl;
 		cout << "Plan Sirial : " << Err_sirial << endl;
 		cout << "Plan date : " << Plan_date << endl;
 		cout << "Plan amount : " << Amount << endl;
+		cout << "-------------------------" << endl;
 	}
 };
 
