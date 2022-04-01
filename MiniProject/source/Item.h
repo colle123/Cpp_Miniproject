@@ -72,6 +72,7 @@ public:
 	void print_Info() const;
 	string& return_ssd_name();
 	string& return_ssd_serial();
+	string& return_ssd_num();
 };
 
 class HDD
@@ -165,6 +166,7 @@ public:
 	string& return_case_serial();
 	string& return_ssd_name();
 	string& return_ssd_serial();
+	string& return_ssd_num();
 	string& return_hdd_name();
 	string& return_hdd_serial();
 	string& return_memorry_name();
@@ -176,18 +178,12 @@ public:
 	string& return_Product_Searial();
 };
 
-class POP
+class errlist
 {
-
 private:
-	BOM* aaa;
 
 public:
-	//POP() { };
-	POP(BOM& temp);
-	void showpop();
+
 };
-
-
 
 #endif 

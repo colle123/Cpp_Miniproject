@@ -108,6 +108,10 @@ string& SSD::return_ssd_serial()
 {
 	return SSD_Searial;
 }
+string& SSD::return_ssd_num()
+{
+	return SSD_Num;
+}
 
 
 // HDD
@@ -307,6 +311,11 @@ string& BOM::return_ssd_name()
 string& BOM::return_ssd_serial()
 {
 	return ssd->return_ssd_serial();
+}
+
+string& BOM::return_ssd_num()
+{
+	return ssd->return_ssd_num();
 }
 
 string& BOM::return_hdd_name()
