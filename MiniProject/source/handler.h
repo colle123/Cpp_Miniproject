@@ -19,7 +19,7 @@ public:
 	{
 		Err_sirial = plan_sirial;
 	}
-	//handler¿¡ ³Ñ°ÜÁÙ »ı»ê°èÈ¹ ¹è¿­¿¡ °³¼ö¸®ÅÏÇÏ´Â ÇÔ¼ö
+	//handlerì— ë„˜ê²¨ì¤„ ìƒì‚°ê³„íš ë°°ì—´ì— ê°œìˆ˜ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜
 	int getAmount() { return Amount; }
 	string getMemSrial() { return Err_sirial; }
 
@@ -77,10 +77,10 @@ private:
 public:
 	Handler(void);
 
-	// »ùÇÃµ¥ÀÌÅÍÀÔ·Â
+	// ìƒ˜í”Œë°ì´í„°ì…ë ¥
 	void Init_Sample_ItemInfo(void);
 
-	// ¸ŞÀÎ¸Ş´º
+	// ë©”ì¸ë©”ë‰´
 	void Menu_Main(void);
 
 	// BOM
@@ -90,16 +90,16 @@ public:
 	void Show_BOM();
 	void Show_BOM_Searial();
 
-	// »ı»ê°èÈ¹
+	// ìƒì‚°ê³„íš
 	void Menu_ManufacturePlanning();
 	void Add_ManufacturePlanning();
 	void Delete_ManufacturePlanning();
 	void Show_ManufacturePlanning();
 
-	// °øÁ¤
+	// ê³µì •
 	void manufature();
 
-	// ºÒ·®Á¤º¸
+	// ë¶ˆëŸ‰ì •ë³´
 	void Show_NGInfo();
 
 };
