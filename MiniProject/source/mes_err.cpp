@@ -29,7 +29,7 @@ private:
 	MES_ERR* stub[100];
 
 public:
-	void make_product_plan()				//(Pop에서 시리얼번호 받아옴)
+	void make_product_plan()				// (Pop에서 시리얼번호 받아옴)
 	{
 		string sirial;
 

@@ -1,4 +1,3 @@
-
 #pragma once
 #include"handler.h"
 #include"Item.h"
@@ -21,10 +20,10 @@ void Handler::Menu_Main(void)
 	cout << "=====[Main]=====" << endl;
 	cout << endl;
 	cout << "1. BOM" << endl;
-	cout << "2. »ı»ê°èÈ¹" << endl;
-	cout << "3. °øÁ¤" << endl;
-	cout << "4. ºÒ·®Á¤º¸È®ÀÎ" << endl;
-	cout << "5. ÇÁ·Î±×·¥ Á¾·á" << endl << endl;
+	cout << "2. ìƒì‚°ê³„íš" << endl;
+	cout << "3. ê³µì •" << endl;
+	cout << "4. ë¶ˆëŸ‰ì •ë³´í™•ì¸" << endl;
+	cout << "5. í”„ë¡œê·¸ë¨ ì¢…ë£Œ" << endl << endl;
 }
 
 void Handler::Init_Sample_ItemInfo(void)
@@ -72,11 +71,11 @@ void Handler::Menu_BOM(void)
 		cout << endl;
 		cout << "=====[BOM]=====" << endl;
 		cout << endl;
-		cout << "1. BOM Ãß°¡" << endl;
-		cout << "2. BOM Á¶È¸" << endl;
-		cout << "3. BOM »èÁ¦" << endl;
-		cout << "4. µÚ·Î°¡±â" << endl;
-		cout << "¼±ÅÃ : ";
+		cout << "1. BOM ì¶”ê°€" << endl;
+		cout << "2. BOM ì¡°íšŒ" << endl;
+		cout << "3. BOM ì‚­ì œ" << endl;
+		cout << "4. ë’¤ë¡œê°€ê¸°" << endl;
+		cout << "ì„ íƒ : ";
 		cin >> Select_BOM;
 
 		if (Select_BOM == 1)
@@ -101,7 +100,7 @@ void Handler::Menu_BOM(void)
 		else
 		{
 			while (getchar() != '\n');
-			cout << "Àß¸øµÈ ÀÔ·Â°ªÀÔ´Ï´Ù." << endl;
+			cout << "ì˜ëª»ëœ ì…ë ¥ê°’ì…ë‹ˆë‹¤." << endl;
 		}
 	}
 }
@@ -110,52 +109,52 @@ void Handler::Add_BOM()
 {
 	string name, serial_num;
 	int cpu_sel, mb_sel, ram_sel, hdd_sel, ssd_sel, pow_sel, case1_sel, os_sel;
-	cout << "µî·ÏÇÒ Á¦Ç° ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä: ";
+	cout << "ë“±ë¡í•  ì œí’ˆ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ";
 	cin >> name;
-	cout << "½Ã¸®¾ó¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ";
+	cout << "ì‹œë¦¬ì–¼ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ";
 	cin >> serial_num;
 
 	print_product_for(cpu, cpu_count);
-	cout << "CPU¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ";
+	cout << "CPUë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ";
 	cin >> cpu_sel;
 
 	print_product_for(mb, mb_count);
-	cout << "M/B¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ";
+	cout << "M/Bë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ";
 	cin >> mb_sel;
 
 	print_product_for(ram, ram_count);
-	cout << "Memory¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ";
+	cout << "Memoryë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ";
 	cin >> ram_sel;
 
 	print_product_for(hdd, hdd_count);
-	cout << "HDD¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ";
+	cout << "HDDë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ";
 	cin >> hdd_sel;
 
 	print_product_for(ssd, ssd_count);
-	cout << "SSD¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ";
+	cout << "SSDë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ";
 	cin >> ssd_sel;
 
 	print_product_for(pow, pow_count);
-	cout << "POWER¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ";
+	cout << "POWERë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ";
 	cin >> pow_sel;
 
 	print_product_for(case1, case1_count);
-	cout << "CASE¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ";
+	cout << "CASEë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ";
 	cin >> case1_sel;
 
 	print_product_for(os, os_count);
-	cout << "OS¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: ";
+	cout << "OSë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: ";
 	cin >> os_sel;
 	temp[Num_product++] = new BOM(name, serial_num, cpu[cpu_sel], mb[mb_sel], ram[ram_sel], hdd[hdd_sel], ssd[ssd_sel], pow[pow_sel], case1[case1_sel], os[os_sel]);
 	temp1[Num_product1++] = BOM(name, serial_num, cpu[cpu_sel], mb[mb_sel], ram[ram_sel], hdd[hdd_sel], ssd[ssd_sel], pow[pow_sel], case1[case1_sel], os[os_sel]);
 
-	//(2)pop¿¡ BOM ³Ö´Â°úÁ¤(Áö¿öµµ µÉºÎºĞ) 
+	//(2)popì— BOM ë„£ëŠ”ê³¼ì •(ì§€ì›Œë„ ë ë¶€ë¶„) 
 	/*pop[number++] = new POP(temp1[0]);*/
 }
 
 void Handler::Delete_BOM()
 {
-	cout << endl << "¹Ì±¸Çö" << endl << endl;
+	cout << endl << "ë¯¸êµ¬í˜„" << endl << endl;
 }
 
 void Handler::Show_BOM()
@@ -167,19 +166,79 @@ void Handler::Show_BOM()
 	system("pause");
 }
 
+void Handler::Show_BOM_Searial()
+{
+	for (int i = 0; i < Num_product; i++) {
+		cout <<"<" << i + 1 << "ë²ˆ BOM >" << endl;
+		cout <<"BOM ë²ˆí˜¸ :" << temp[i]->return_Product_Searial() << endl;
+		cout << "í’ˆëª… : " << temp[i]->return_bom_name() << endl << endl;
+		//pop[i]->showpop();
+	}
+}
+
 
 void Handler::Show_NGInfo()
 {
-	cout << endl << "¹Ì±¸Çö" << endl << endl;
+	cout << endl << "ë¯¸êµ¬í˜„" << endl << endl;
 }
 
 void Handler::manufature()
 {
-	cout << endl << "CPU Á¶¸³Áß...OK" << endl << endl;
-	cout << endl << "CPU Á¶¸³Áß...OK" << endl << endl;
-	cout << endl << "CPU Á¶¸³Áß...OK" << endl << endl;
-	cout << endl << "POWER Á¶¸³Áß...NG" << endl << endl;
-	cout << endl << "!!! ¿À·ù¹ß»ı !!!" << endl << endl;
+	srand((unsigned int)time(NULL));
+	cout << endl << "CPU ì¡°ë¦½ì¤‘...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! ì˜¤ë¥˜ë°œìƒ !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "HDD ì¡°ë¦½ì¤‘...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! ì˜¤ë¥˜ë°œìƒ !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "SSD ì¡°ë¦½ì¤‘...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! ì˜¤ë¥˜ë°œìƒ !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "MB ì¡°ë¦½ì¤‘...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! ì˜¤ë¥˜ë°œìƒ !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "CASE ì¡°ë¦½ì¤‘...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! ì˜¤ë¥˜ë°œìƒ !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "POWER ì¡°ë¦½ì¤‘...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! ì˜¤ë¥˜ë°œìƒ !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+	
 	system("pause");
 }
 
@@ -189,13 +248,13 @@ void Handler::Menu_ManufacturePlanning() {
 	while (1) {
 		system("cls");
 		cout << endl;
-		cout << "=====[»ı»ê°èÈ¹]=====" << endl;
+		cout << "=====[ìƒì‚°ê³„íš]=====" << endl;
 		cout << endl;
-		cout << "1. »ı»ê°èÈ¹ Ãß°¡" << endl;
-		cout << "2. »ı»ê°èÈ¹ »èÁ¦" << endl;
-		cout << "3. »ı»ê°èÈ¹ Á¶È¸" << endl;
-		cout << "4. µÚ·Î°¡±â" << endl << endl;
-		cout << "ÀÔ·Â : "; cin >> choice;
+		cout << "1. ìƒì‚°ê³„íš ì¶”ê°€" << endl;
+		cout << "2. ìƒì‚°ê³„íš ì‚­ì œ" << endl;
+		cout << "3. ìƒì‚°ê³„íš ì¡°íšŒ" << endl;
+		cout << "4. ë’¤ë¡œê°€ê¸°" << endl << endl;
+		cout << "ì…ë ¥ : "; cin >> choice;
 
 		if (choice == 1)
 			Add_ManufacturePlanning();
@@ -205,40 +264,40 @@ void Handler::Menu_ManufacturePlanning() {
 			Show_ManufacturePlanning();
 		else if (choice == 4)
 			break;
-		else cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù." << endl;
+		else cout << "ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤." << endl;
 	}
 }
 
 
-void Handler::Add_ManufacturePlanning()				//(BOM¿¡¼­ ½Ã¸®¾ó¹øÈ£ ¹Ş¾Æ¿È)
+void Handler::Add_ManufacturePlanning()				//(BOMì—ì„œ ì‹œë¦¬ì–¼ë²ˆí˜¸ ë°›ì•„ì˜´)
 {
 	string sirial;
 	int date;
 	int amount;
 	string model;
 
-	//Á¦Ç° ¹Ş¾Æ¿Í¼­ ¼±ÅÃ
-	cout << "===========================»ı»ê°èÈ¹=============================" << endl;
-	///BOM¿¡¼­ ¹Ş¾Æ¿Í ºÎÇ° ¸®½ºÆ® Ãâ·Â
+	//ì œí’ˆ ë°›ì•„ì™€ì„œ ì„ íƒ
+	cout << "===========================ìƒì‚°ê³„íš=============================" << endl;
+	///BOMì—ì„œ ë°›ì•„ì™€ ë¶€í’ˆ ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 
-	cout << "ÀÛ¾÷Áö½Ã¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : "; cin >> sirial;
-	//»ı»êÇÒ ³¯Â¥, °³¼ö ÀÔ·Â
-	cout << "»ı»êÇÒ ³¯Â¥¸¦ ÀÔ·ÂÇÏ¼¼¿ä : "; cin >> date;
-	cout << "»ı»êÇÒ °³¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : "; cin >> amount;
-	cout << "»ı»êÇÒ ¸ğµ¨À» ¼±ÅÃÇØÁÖ¼¼¿ä : "; cin >> model;
+	cout << "ì‘ì—…ì§€ì‹œ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : "; cin >> sirial;
+	//ìƒì‚°í•  ë‚ ì§œ, ê°œìˆ˜ ì…ë ¥
+	cout << "ìƒì‚°í•  ë‚ ì§œë¥¼ ì…ë ¥í•˜ì„¸ìš” : "; cin >> date;
+	cout << "ìƒì‚°í•  ê°œìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : "; cin >> amount;
+	cout << endl;
+	Show_BOM_Searial();
+	cout << "ìƒì‚°í•  BOM ë²ˆí˜¸ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš” : "; cin >> model;
 
-	stub[Num_Memproduct] = new Plan(sirial, date, amount);
-
+	stub[Num_Memproduct] = new Plan(sirial, date, amount, model);
 	cout << endl;
 	stub[Num_Memproduct]->Print_Plan();
 	cout << endl;
 	++Num_Memproduct;
 	system("pause");
-
-	//handler¿¡ ³Ñ°ÜÁÙ »ı»ê°èÈ¹ ¹è¿­ »ı¼º
+	//handlerì— ë„˜ê²¨ì¤„ ìƒì‚°ê³„íš ë°°ì—´ ìƒì„±
 }
 
-void Handler::Show_ManufacturePlanning()              //¸ğµç °èÈ¹ Ãâ·Â
+void Handler::Show_ManufacturePlanning()              //ëª¨ë“  ê³„íš ì¶œë ¥
 {
 	vector<Plan*> plan;
 	vector<Plan*>::reverse_iterator iter;
@@ -257,25 +316,25 @@ void Handler::Show_ManufacturePlanning()              //¸ğµç °èÈ¹ Ãâ·Â
 void Handler::Delete_ManufacturePlanning()
 {
 	string sirial;
-	cout << "½Ã¸®¾óÀ» ÀÔ·ÂÇÏ¼¼¿ä" << endl;
+	cout << "ì‹œë¦¬ì–¼ì„ ì…ë ¥í•˜ì„¸ìš”" << endl;
 	cin >> sirial;
 
 	for (int i = 0; i < Num_Memproduct; i++)
 	{
 		if (sirial == stub[i]->getMemSrial())
 		{
-			delete stub[i];						//»ı»ê°ÔÈ¹ ½Ã¸®¾ó °Ë»öÇÏ¿© »èÁ¦
+			delete stub[i];						//ìƒì‚°ê²Œíš ì‹œë¦¬ì–¼ ê²€ìƒ‰í•˜ì—¬ ì‚­ì œ
 			for (int j = i; j < Num_Memproduct; j++)
 			{
-				stub[j] = stub[j + 1];			//»èÁ¦µÈ ¹è¿­ µÚ¿¡ ÀÖ´Â ¹è¿­À» ÇÑÄ­ ¾ÕÀ¸·Î »ğÀÓ
+				stub[j] = stub[j + 1];			//ì‚­ì œëœ ë°°ì—´ ë’¤ì— ìˆëŠ” ë°°ì—´ì„ í•œì¹¸ ì•ìœ¼ë¡œ ì‚½ì„
 			}
 			Num_Memproduct--;
-			cout << "°èÈ¹À» »èÁ¦Çß½À´Ï´Ù." << endl;
+			cout << "ê³„íšì„ ì‚­ì œí–ˆìŠµë‹ˆë‹¤." << endl;
 			system("pause");
 			return;
 		}
 	}
-	cout << "ÇØ´ç °èÈ¹ÀÌ ¾ø½À´Ï´Ù." << endl;
+	cout << "í•´ë‹¹ ê³„íšì´ ì—†ìŠµë‹ˆë‹¤." << endl;
 	system("pause");
 }
 

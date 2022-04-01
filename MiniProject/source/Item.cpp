@@ -253,6 +253,11 @@ void BOM::Print_produt() const
 	software_os->print_Info();
 }
 
+string& BOM::return_Product_Searial()
+{
+	return Product_Searial;
+}
+
 
 string& BOM::return_bom_name()
 {
@@ -343,30 +348,3 @@ string& BOM::return_cpu_serial()
 {
 	return cpu->return_cpu_serial();
 }
-
-//POP::POP(BOM& temp)
-//{
-//	aaa = new BOM(temp);
-//}
-
-//void POP::showpop()
-//{
-//	cout << aaa->return_bom_name() << endl;         //BOM이름 
-//	cout << aaa->return_bom_serial() << endl;       //BOM시리얼번호
-//	cout << aaa->return_case_name() << endl;        //CASE이름 
-//	cout << aaa->return_case_serial() << endl;      //CASE시리얼번호
-//	cout << aaa->return_cpu_name() << endl;         //CPU이름
-//	cout << aaa->return_cpu_serial() << endl;       //CPU시리얼번호
-//	cout << aaa->return_hdd_name() << endl;         //HDD이름 
-//	cout << aaa->return_hdd_serial() << endl;       //HDD시리얼번호
-//	cout << aaa->return_mb_name() << endl;          //mb이름
-//	cout << aaa->return_mb_serial() << endl;        //mb시리얼번호
-//	cout << aaa->return_memorry_name() << endl;     //momory이름
-//	cout << aaa->return_memorry_serial() << endl;   //momory시리얼번호
-//	cout << aaa->return_power_name() << endl;       //power이름
-//	cout << aaa->return_power_serial() << endl;     //power시리얼번호
-//	cout << aaa->return_software_name() << endl;    //software이름
-//	cout << aaa->return_software_serial() << endl;  //software시리얼번호
-//	cout << aaa->return_ssd_name() << endl;         //ssd이름
-//	cout << aaa->return_ssd_serial() << endl;       //ssd시리얼번호
-//}
