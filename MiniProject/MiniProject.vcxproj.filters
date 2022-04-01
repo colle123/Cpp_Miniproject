@@ -27,6 +27,9 @@
     <ClCompile Include="source\MiniMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="source\Error_select.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Item.h">
