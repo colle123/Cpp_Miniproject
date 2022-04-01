@@ -11,10 +11,11 @@ private:
 	string Err_sirial;
 	int Plan_date;
 	int Amount;
+	string BOM_Num;
 
 
 public:
-	Plan(const string plan_sirial, int plan_date, int Amount) : Plan_date(plan_date), Amount(Amount)
+	Plan(const string plan_sirial, int plan_date, int Amount,string aBOM_Num) : Plan_date(plan_date), Amount(Amount),BOM_Num(aBOM_Num)
 	{
 		Err_sirial = plan_sirial;
 	}
@@ -24,9 +25,12 @@ public:
 
 	virtual void Print_Plan() const
 	{
+		cout << "-------------------------" << endl;
 		cout << "Plan Sirial : " << Err_sirial << endl;
 		cout << "Plan date : " << Plan_date << endl;
 		cout << "Plan amount : " << Amount << endl;
+		cout << "target BOM_Num : " << BOM_Num << endl;
+		cout << "-------------------------" << endl;
 	}
 };
 
@@ -84,6 +88,7 @@ public:
 	void Add_BOM();
 	void Delete_BOM();
 	void Show_BOM();
+	void Show_BOM_Searial();
 
 	// »ý»ê°èÈ¹
 	void Menu_ManufacturePlanning();

@@ -5,6 +5,9 @@
 #include<cstring>
 #include<vector>
 #include<Windows.h>
+#include<random>
+#include<cstdlib>
+
 
 
 #pragma warning(disable:4996)
@@ -170,6 +173,7 @@ public:
 	string& return_mb_serial();
 	string& return_cpu_name();
 	string& return_cpu_serial();
+	string& return_Product_Searial();
 };
 
 class POP

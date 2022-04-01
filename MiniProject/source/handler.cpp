@@ -1,4 +1,3 @@
-
 #pragma once
 #include"handler.h"
 #include"Item.h"
@@ -167,6 +166,16 @@ void Handler::Show_BOM()
 	system("pause");
 }
 
+void Handler::Show_BOM_Searial()
+{
+	for (int i = 0; i < Num_product; i++) {
+		cout <<"<" << i + 1 << "번 BOM >" << endl;
+		cout <<"BOM 번호 :" << temp[i]->return_Product_Searial() << endl;
+		cout << "품명 : " << temp[i]->return_bom_name() << endl << endl;
+		//pop[i]->showpop();
+	}
+}
+
 
 void Handler::Show_NGInfo()
 {
@@ -175,11 +184,61 @@ void Handler::Show_NGInfo()
 
 void Handler::manufature()
 {
-	cout << endl << "CPU 조립중...OK" << endl << endl;
-	cout << endl << "CPU 조립중...OK" << endl << endl;
-	cout << endl << "CPU 조립중...OK" << endl << endl;
-	cout << endl << "POWER 조립중...NG" << endl << endl;
-	cout << endl << "!!! 오류발생 !!!" << endl << endl;
+	srand((unsigned int)time(NULL));
+	cout << endl << "CPU 조립중...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! 오류발생 !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "HDD 조립중...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! 오류발생 !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "SSD 조립중...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! 오류발생 !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "MB 조립중...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! 오류발생 !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "CASE 조립중...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! 오류발생 !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+
+	cout << endl << "POWER 조립중...";
+	if (rand() % 500000000 == 1)
+	{
+		cout << endl << "!!! 오류발생 !!!" << endl << endl;
+		system("pause");
+		return;
+	}
+	else cout << "OK" << endl << endl;
+	
 	system("pause");
 }
 
@@ -221,21 +280,20 @@ void Handler::Add_ManufacturePlanning()				//(BOM에서 시리얼번호 받아옴)
 	cout << "===========================생산계획=============================" << endl;
 	///BOM에서 받아와 부품 리스트 출력
 
-	cout << "생산할 Srial번호를 입력하세요 : "; cin >> sirial;
+	cout << "작업지시 번호를 입력하세요 : "; cin >> sirial;
 	//생산할 날짜, 개수 입력
 	cout << "생산할 날짜를 입력하세요 : "; cin >> date;
 	cout << "생산할 개수를 입력하세요 : "; cin >> amount;
-	cout << "생산할 모델을 선택해주세요 : "; cin >> model;
-
-	stub[Num_Memproduct++] = new Plan(sirial, date, amount);
-
 	cout << endl;
-	cout << "-------------------------" << endl;
-	stub[0]->Print_Plan();
-	cout << "-------------------------" << endl;
+	Show_BOM_Searial();
+	cout << "생산할 BOM 번호를 선택해주세요 : "; cin >> model;
+
+	stub[Num_Memproduct] = new Plan(sirial, date, amount, model);
 	cout << endl;
+	stub[Num_Memproduct]->Print_Plan();
+	cout << endl;
+	++Num_Memproduct;
 	system("pause");
-
 	//handler에 넘겨줄 생산계획 배열 생성
 }
 
@@ -244,7 +302,6 @@ void Handler::Show_ManufacturePlanning()              //모든 계획 출력
 	vector<Plan*> plan;
 	vector<Plan*>::reverse_iterator iter;
 
-	cout << "-------------------------" << endl;
 	for (int i = 0; i < Num_Memproduct; i++)
 	{
 		plan.push_back(stub[i]);
@@ -253,9 +310,6 @@ void Handler::Show_ManufacturePlanning()              //모든 계획 출력
 	{
 		(*iter)->Print_Plan();
 	}
-	/*for (int i = 0; i < Num_Memproduct; i++)
-		stub[i]->Print_Plan();*/
-	cout << "-------------------------" << endl;
 	system("pause");
 }
 
