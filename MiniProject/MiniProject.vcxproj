@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Error_select.cpp" />
     <ClCompile Include="source\handler.cpp" />
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\mes_err.cpp" />

@@ -43,13 +43,20 @@ int main(void)
 
 		else if (Select_main == 4)	// 1.4 불량확인
 		{
-			cout << endl << "< 오류 정보 >" << endl << endl;
+
+			manager.Show_NGInfo();
+			/*cout << endl << "< 오류 정보 >" << endl << endl;
 			for(int i = 0;i < num_err_list;i++)
 				manager.Show_NGInfo(err_num[i]);
-			system("pause");
+			system("pause");*/
 		}
 
-		else if (Select_main == 5)	// 1.5 종료
+		else if (Select_main == 5)	// 1.5 에러등록
+		{
+			manager.Add_NGInfo();
+		}
+
+		else if (Select_main == 6)	// 1.6 종료
 		{
 			exit(1);
 		}
