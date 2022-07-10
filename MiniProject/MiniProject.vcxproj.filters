@@ -15,8 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\mes_err.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="source\handler.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Item.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="source\MiniMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="source\Error_select.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Item.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="source\handler.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -139,7 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Error_select.cpp" />
+    <ClCompile Include="source\handler.cpp" />
+    <ClCompile Include="source\Item.cpp" />
+    <ClCompile Include="source\mes_err.cpp" />
     <ClCompile Include="source\MiniMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\handler.h" />
+    <ClInclude Include="source\Item.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
